@@ -1,0 +1,114 @@
+import java .util. Scanner;
+import java.lang.math;
+public class mortage calculator {
+    public class void main(string[]args){
+        Scanner scanner = new Scanner(system.in);
+       
+
+{
+
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Enter Basic Salary: ");
+    double basic = scanner.nextDouble();
+
+    if(scanner.hasNextDouble()){
+
+        System.out.println("This the amount");
+    }
+    else{
+        System.out.println("Enter only Numbers");
+        scanner.next();
+    }
+
+    System.out.println("Enter Credit :"); 
+    double Credit = scanner.nextDouble();
+
+    if(Credit > 0 && Credit < 300){
+        System.out.println("No Access");
+    }
+    else if(Credit > 300 && Credit < 500){
+
+        System.out.println("Access");
+    }
+    else {
+        System.out.println("Invalid Credit Amount");
+    }
+    System.out.println("Enter Criminal Record :");
+     
+    boolean record = scanner.nextBoolean();
+
+
+
+
+    String message;
+    while(true){
+        System.out.println(message);
+        if(scanner.hasNextDouble()){
+
+            System.out.print(scanner.nextDouble());
+        }
+    
+    else{
+        System.out.println("Invaid input");
+        scanner.next();
+    }
+    }
+
+
+
+
+   
+
+
+
+
+
+
+        
+
+        System.out.println("=== Bangladesh Mortgage Calculator (BDT) ===");
+
+        
+        System.out.print("Enter loan amount (Principal in BDT): ");
+        double principal = scanner.nextDouble();
+
+        System.out.print("Enter annual interest rate (e.g., 8.5 for 8.5%): ");
+        double annualInterestRate = scanner.nextDouble();
+
+        System.out.print("Enter loan period (in years): ");
+        int years = scanner.nextInt();
+
+        
+        double monthlyInterestRate = (annualInterestRate / 100) / 12;
+        int numberOfPayments = years * 12;
+
+       
+        double mortgagePayment = principal
+                * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments))
+                / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
+
+
+        double totalPayment = mortgagePayment * numberOfPayments;
+        double totalInterest = totalPayment - principal;
+
+        
+        Locale bdLocale = Locale.of("en", "BD");
+        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(bdLocale);
+
+        System.out.println("\n=== Mortgage Summary ===");
+        System.out.println("Loan Amount: " + currencyFormatter.format(principal));
+        System.out.println("Monthly Payment: " + currencyFormatter.format(mortgagePayment));
+        System.out.println("Total Payment: " + currencyFormatter.format(totalPayment));
+        System.out.println("Total Interest: " + currencyFormatter.format(totalInterest));
+
+        scanner.close();
+    }
+}
+    }
+}
+
+    
+
+
+     
